@@ -1,0 +1,48 @@
+{
+  "name": "md-to-pdf",
+  "version": "1.0.0",
+  "description": "A comprehensive toolset for converting Markdown documents to PDF - includes library, CLI, and HTTP service",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "md-to-pdf": "dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "start:server": "node dist/server/index.js",
+    "dev:server": "ts-node src/server/index.ts",
+    "example": "ts-node examples/library-usage.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "markdown",
+    "pdf",
+    "converter",
+    "cli",
+    "api",
+    "service"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "commander": "^14.0.3",
+    "express": "^5.2.1",
+    "markdown-it": "^14.1.0",
+    "puppeteer": "^24.36.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.2.0",
+    "@types/supertest": "^6.0.3",
+    "jest": "^30.2.0",
+    "supertest": "^7.2.2",
+    "ts-jest": "^29.4.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
