@@ -204,7 +204,7 @@ node dist/cli/index.js examples/sample.md -o sample.pdf
 
 - **TypeScript**: Type-safe development
 - **Puppeteer**: PDF generation engine
-- **marked**: Markdown parser
+- **markdown-it**: Markdown parser
 - **Express**: HTTP server framework
 - **Commander**: CLI framework
 - **Jest**: Testing framework

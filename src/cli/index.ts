@@ -49,9 +49,16 @@ program
       }
       
       // Prepare PDF options
+      const validFormats = ['A4', 'A3', 'A5', 'Letter', 'Legal', 'Tabloid'];
+      const format = options.format as string;
+      if (!validFormats.includes(format)) {
+        console.error(`Error: Invalid format. Must be one of: ${validFormats.join(', ')}`);
+        process.exit(1);
+      }
+      
       const pdfOptions: PdfOptions = {
         output: outputPath,
-        format: options.format as any,
+        format: format as 'A4' | 'A3' | 'A5' | 'Letter' | 'Legal' | 'Tabloid',
         landscape: options.landscape,
         printBackground: options.background,
         margin: {
