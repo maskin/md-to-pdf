@@ -1,5 +1,11 @@
-import { marked } from 'marked';
+import MarkdownIt from 'markdown-it';
 import puppeteer, { Browser, Page } from 'puppeteer';
+
+const md = new MarkdownIt({
+  html: true,
+  linkify: true,
+  typographer: true
+});
 
 /**
  * Options for PDF generation
@@ -70,7 +76,7 @@ export async function markdownToPdf(
   
   try {
     // Convert markdown to HTML
-    const html = await marked(markdown);
+    const html = md.render(markdown);
     
     // Create full HTML document with styling
     const fullHtml = createHtmlDocument(html, options.css);
